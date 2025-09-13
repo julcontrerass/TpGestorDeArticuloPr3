@@ -28,6 +28,7 @@ namespace GertorDeArticulosTp1Progra3
         {
             frmAltaArticulo alta = new frmAltaArticulo();
             alta.ShowDialog();
+            cargarTabla();
 
         }
 
@@ -79,6 +80,8 @@ namespace GertorDeArticulosTp1Progra3
                     articuloService.eliminar(seleccionado.id);
                     MessageBox.Show("Artículo eliminado");
                 }
+                cargarTabla();
+
             }
             catch (Exception ex)
             {
@@ -98,6 +101,12 @@ namespace GertorDeArticulosTp1Progra3
             frmAltaArticulo modificar = new frmAltaArticulo(seleccionado);
             modificar.ShowDialog();
             cargarTabla();
+        }
+
+        private void btnModMarcas_Click(object sender, EventArgs e)
+        {
+            frmModificarMarcasyCategorias frmModificarMarcasyCategorias = new frmModificarMarcasyCategorias();
+            frmModificarMarcasyCategorias.ShowDialog();
         }
     }
 }

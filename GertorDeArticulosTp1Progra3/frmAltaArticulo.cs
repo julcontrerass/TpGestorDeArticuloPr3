@@ -16,6 +16,9 @@ namespace GertorDeArticulosTp1Progra3
     {
 
         private Articulo articulo = null;
+        private Articulo imagen = null;
+
+
         public frmAltaArticulo()
         {
             InitializeComponent();
@@ -25,7 +28,6 @@ namespace GertorDeArticulosTp1Progra3
         {
             InitializeComponent();
             this.articulo = articulo;
-            Text = "Editar Artículo";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -33,25 +35,7 @@ namespace GertorDeArticulosTp1Progra3
             this.Close();
         }
 
-        private void frmAltaArticulo_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if(articulo != null)
-                {
-                    txbCodigoAIngresar.Text = articulo.codigoArticulo;
-                    txbNombreAIngresar.Text = articulo.nombre;
-                    txbDescripcionAIngresar.Text = articulo.descripcion;
-                    txbPrecioAIngresar.Text = articulo.precio.ToString();
-                    //txbUrlImagen.Text = articulo.URLImagen;
-                    lblCodigoAIgresar.Text = "Modificar Artículo";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+        
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -60,11 +44,19 @@ namespace GertorDeArticulosTp1Progra3
             {
                 if (articulo == null)
                     articulo = new Articulo();
+                    imagen = new Articulo();
+
                 articulo.codigoArticulo = txbCodigoAIngresar.Text;
                 articulo.nombre = txbNombreAIngresar.Text;
                 articulo.descripcion = txbDescripcionAIngresar.Text;
                 articulo.precio = decimal.Parse(txbPrecioAIngresar.Text);
+                articulo.idMarca = (int)cbxMarca.SelectedValue;
+                articulo.idCategoria = (int)cbxCategoria.SelectedValue;
+                imagen.URLImagen = txbUrlImagen.Text;
+
+
                 //articulo.URLImagen = txbUrlImagen.Text;
+
                 if (articulo.id != 0)
                 {
                     articuloService.modificar(articulo);
@@ -73,9 +65,9 @@ namespace GertorDeArticulosTp1Progra3
                 else
                 {
                     articuloService.agregar(articulo);
+                    articuloService.AgregarImagen(imagen);
                     MessageBox.Show("Agregado exitosamente");
                 }
-
                 this.Close();
             }
             catch (Exception ex)
@@ -88,28 +80,26 @@ namespace GertorDeArticulosTp1Progra3
         {
             try
             {
+                MarcaService marca = new MarcaService();
+                List<Marca> listaMarcas = marca.Listar();
+                cbxMarca.DataSource = listaMarcas;
+                cbxMarca.DisplayMember = "descripcion";
+                cbxMarca.ValueMember = "id";
+
+                CategoriaService categoria = new CategoriaService();
+                List<Categoria> listaCategorias = categoria.Listar();
+                cbxCategoria.DataSource = listaCategorias;
+                cbxCategoria.DisplayMember = "descripcion";
+                cbxCategoria.ValueMember = "id";
+
                 if (articulo != null)
                 {
+                    lblTituloNuevoArticulo.Text = "Editar articulo";
+
                     txbCodigoAIngresar.Text = articulo.codigoArticulo;
                     txbNombreAIngresar.Text = articulo.nombre;
                     txbDescripcionAIngresar.Text = articulo.descripcion;
                     txbPrecioAIngresar.Text = articulo.precio.ToString();
-
-                    MarcaService marca = new MarcaService();
-                    List<Marca> listaMarcas = marca.Listar();
-                    cbxMarca.DataSource = listaMarcas;
-                    cbxMarca.DisplayMember = "descripcion";
-                    cbxMarca.ValueMember = "id";
-
-                    CategoriaService categoria = new CategoriaService();
-                    List<Categoria> listaCategorias = categoria.Listar();
-                    cbxCategoria.DataSource = listaCategorias;
-                    cbxCategoria.DisplayMember = "descripcion";
-
-                    cbxCategoria.ValueMember = "id";
-
-
-
                 }
             }
             catch (Exception ex)

@@ -21,7 +21,7 @@ namespace service
 
                //datos.setearConsulta("select ART.Id, ART.Codigo, ART.Nombre, ART.Descripcion, ART.IdMarca, ART.IdCategoria, ART.Precio,(SELECT TOP 1 IMG.ImagenUrl FROM IMAGENES AS IMG WHERE ART.Id = IMG.IdArticulo) AS ImagenUrl FROM ARTICULOS as ART");
                //select ART.Id, ART.Codigo, ART.Nombre, ART.Descripcion, ART.IdMarca, ART.IdCategoria, ART.Precio,(SELECT TOP 1 IMG.ImagenUrl FROM IMAGENES AS IMG WHERE ART.Id = IMG.IdArticulo) AS ImagenUrlFROM ARTICULOS as ART
-               datos.setearConsulta("select A.id idArticulo, A.Codigo, A.Nombre, A.descripcion descArticulo, A.Precio, A.IdMarca, A.IdCategoria, M.Id codigoMarca, M.Descripcion descMarca, C.Id codigoCategoria, C.Descripcion descCategoria,(select top 1 I.ImagenUrl FROM IMAGENES I WHERE A.Id = I.IdArticulo) AS URLImagen from ARTICULOS A, MARCAS M, CATEGORIAS C where M.id = A.idMarca and C.id = A.IdCategoria");
+               datos.setearConsulta("select A.id idArticulo, A.Codigo, A.Nombre, A.descripcion descArticulo, A.Precio, A.IdMarca, A.IdCategoria, M.Id codigoMarca, M.Descripcion descMarca, C.Id codigoCategoria, C.Descripcion descCategoria,(select top 1 I.ImagenUrl FROM IMAGENES I WHERE A.Id = I.IdArticulo) AS URLImagen from ARTICULOS A, MARCAS M, CATEGORIAS C where M.id = A.idMarca and C.id = A.IdCategoria ");
              
                 datos.ejecutarLectura();
 
@@ -111,7 +111,9 @@ namespace service
             try
             {
                 //datos.setearConsulta("Insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)values(" + nuevo.codigoArticulo + "," + nuevo.nombre + "," + nuevo.descripcion + ", " + nuevo.marca + "," + nuevo.categoria + ", " + nuevo.precio.ToString(System.Globalization.CultureInfo.InvariantCulture) + " )");
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('"+ nuevo.codigoArticulo + "','"+ nuevo.nombre + "','"+ nuevo.descripcion + "',"+ nuevo.Marca + ","+ nuevo.Categoria + ","+ nuevo.precio.ToString(System.Globalization.CultureInfo.InvariantCulture) + ")");
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES ('" + nuevo.codigoArticulo + "','"+ nuevo.nombre + "','"+ nuevo.descripcion + "',@IdMarca , @IdCategoria,'" + nuevo.precio.ToString(System.Globalization.CultureInfo.InvariantCulture) + "')");
+                datos.setearParametro("@IdMarca", nuevo.idMarca);
+                datos.setearParametro("@IdCategoria", nuevo.idCategoria);
                 datos.ejecutarAccion();          
             }
             catch(Exception ex)
@@ -156,6 +158,26 @@ namespace service
                 datos.setearParametro("@idCategoria", articulo.idCategoria);
                 datos.setearParametro("@precio", articulo.precio);
                 datos.setearParametro("@id", articulo.id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void AgregarImagen(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into IMAGENES (IdArticulo, ImagenUrl) values (@idArticulo, @imagenUrl)");
+                datos.setearParametro("@idArticulo", articulo.id);
+                datos.setearParametro("@imagenUrl", articulo.URLImagen);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

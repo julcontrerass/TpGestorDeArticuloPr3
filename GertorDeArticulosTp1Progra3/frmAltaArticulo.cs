@@ -95,8 +95,21 @@ namespace GertorDeArticulosTp1Progra3
                     txbDescripcionAIngresar.Text = articulo.descripcion;
                     txbPrecioAIngresar.Text = articulo.precio.ToString();
 
-                    //txbUrlImagen.Text = articulo.URLImagen;
-                    //lblCodigoAIgresar.Text = "Modificar Artículo";
+                    MarcaService marca = new MarcaService();
+                    List<Marca> listaMarcas = marca.Listar();
+                    cbxMarca.DataSource = listaMarcas;
+                    cbxMarca.DisplayMember = "descripcion";
+                    cbxMarca.ValueMember = "id";
+
+                    CategoriaService categoria = new CategoriaService();
+                    List<Categoria> listaCategorias = categoria.Listar();
+                    cbxCategoria.DataSource = listaCategorias;
+                    cbxCategoria.DisplayMember = "descripcion";
+
+                    cbxCategoria.ValueMember = "id";
+
+
+
                 }
             }
             catch (Exception ex)

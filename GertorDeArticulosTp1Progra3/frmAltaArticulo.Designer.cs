@@ -49,56 +49,63 @@
             // lblCodigoAIgresar
             // 
             this.lblCodigoAIgresar.AutoSize = true;
-            this.lblCodigoAIgresar.Location = new System.Drawing.Point(76, 55);
+            this.lblCodigoAIgresar.Location = new System.Drawing.Point(51, 36);
+            this.lblCodigoAIgresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigoAIgresar.Name = "lblCodigoAIgresar";
-            this.lblCodigoAIgresar.Size = new System.Drawing.Size(67, 20);
+            this.lblCodigoAIgresar.Size = new System.Drawing.Size(46, 13);
             this.lblCodigoAIgresar.TabIndex = 0;
             this.lblCodigoAIgresar.Text = "Codigo: ";
             // 
             // lblNombreAIngresar
             // 
             this.lblNombreAIngresar.AutoSize = true;
-            this.lblNombreAIngresar.Location = new System.Drawing.Point(65, 94);
+            this.lblNombreAIngresar.Location = new System.Drawing.Point(43, 61);
+            this.lblNombreAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAIngresar.Name = "lblNombreAIngresar";
-            this.lblNombreAIngresar.Size = new System.Drawing.Size(69, 20);
+            this.lblNombreAIngresar.Size = new System.Drawing.Size(47, 13);
             this.lblNombreAIngresar.TabIndex = 1;
             this.lblNombreAIngresar.Text = "Nombre:";
             // 
             // lblDescripcionAIngresar
             // 
             this.lblDescripcionAIngresar.AutoSize = true;
-            this.lblDescripcionAIngresar.Location = new System.Drawing.Point(34, 124);
+            this.lblDescripcionAIngresar.Location = new System.Drawing.Point(23, 81);
+            this.lblDescripcionAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcionAIngresar.Name = "lblDescripcionAIngresar";
-            this.lblDescripcionAIngresar.Size = new System.Drawing.Size(100, 20);
+            this.lblDescripcionAIngresar.Size = new System.Drawing.Size(69, 13);
             this.lblDescripcionAIngresar.TabIndex = 2;
             this.lblDescripcionAIngresar.Text = "Descripcion: ";
             // 
             // txbCodigoAIngresar
             // 
-            this.txbCodigoAIngresar.Location = new System.Drawing.Point(159, 48);
+            this.txbCodigoAIngresar.Location = new System.Drawing.Point(106, 31);
+            this.txbCodigoAIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbCodigoAIngresar.Name = "txbCodigoAIngresar";
-            this.txbCodigoAIngresar.Size = new System.Drawing.Size(290, 26);
+            this.txbCodigoAIngresar.Size = new System.Drawing.Size(195, 20);
             this.txbCodigoAIngresar.TabIndex = 3;
             // 
             // txbNombreAIngresar
             // 
-            this.txbNombreAIngresar.Location = new System.Drawing.Point(159, 91);
+            this.txbNombreAIngresar.Location = new System.Drawing.Point(106, 59);
+            this.txbNombreAIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbNombreAIngresar.Name = "txbNombreAIngresar";
-            this.txbNombreAIngresar.Size = new System.Drawing.Size(290, 26);
+            this.txbNombreAIngresar.Size = new System.Drawing.Size(195, 20);
             this.txbNombreAIngresar.TabIndex = 4;
             // 
             // txbDescripcionAIngresar
             // 
-            this.txbDescripcionAIngresar.Location = new System.Drawing.Point(159, 126);
+            this.txbDescripcionAIngresar.Location = new System.Drawing.Point(106, 82);
+            this.txbDescripcionAIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbDescripcionAIngresar.Name = "txbDescripcionAIngresar";
-            this.txbDescripcionAIngresar.Size = new System.Drawing.Size(290, 26);
+            this.txbDescripcionAIngresar.Size = new System.Drawing.Size(195, 20);
             this.txbDescripcionAIngresar.TabIndex = 5;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(282, 365);
+            this.btnAceptar.Location = new System.Drawing.Point(188, 237);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(89, 29);
+            this.btnAceptar.Size = new System.Drawing.Size(59, 19);
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -106,9 +113,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(439, 365);
+            this.btnCancelar.Location = new System.Drawing.Point(293, 237);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(87, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(58, 19);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -117,74 +125,84 @@
             // lblMarcaAIngresar
             // 
             this.lblMarcaAIngresar.AutoSize = true;
-            this.lblMarcaAIngresar.Location = new System.Drawing.Point(65, 169);
+            this.lblMarcaAIngresar.Location = new System.Drawing.Point(43, 110);
+            this.lblMarcaAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarcaAIngresar.Name = "lblMarcaAIngresar";
-            this.lblMarcaAIngresar.Size = new System.Drawing.Size(57, 20);
+            this.lblMarcaAIngresar.Size = new System.Drawing.Size(40, 13);
             this.lblMarcaAIngresar.TabIndex = 8;
             this.lblMarcaAIngresar.Text = "Marca:";
             // 
             // lblCategoriaAIngresar
             // 
             this.lblCategoriaAIngresar.AutoSize = true;
-            this.lblCategoriaAIngresar.Location = new System.Drawing.Point(40, 201);
+            this.lblCategoriaAIngresar.Location = new System.Drawing.Point(27, 131);
+            this.lblCategoriaAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategoriaAIngresar.Name = "lblCategoriaAIngresar";
-            this.lblCategoriaAIngresar.Size = new System.Drawing.Size(82, 20);
+            this.lblCategoriaAIngresar.Size = new System.Drawing.Size(55, 13);
             this.lblCategoriaAIngresar.TabIndex = 9;
             this.lblCategoriaAIngresar.Text = "Categoria:";
             // 
             // lblPrecioAIngresar
             // 
             this.lblPrecioAIngresar.AutoSize = true;
-            this.lblPrecioAIngresar.Location = new System.Drawing.Point(65, 245);
+            this.lblPrecioAIngresar.Location = new System.Drawing.Point(43, 159);
+            this.lblPrecioAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecioAIngresar.Name = "lblPrecioAIngresar";
-            this.lblPrecioAIngresar.Size = new System.Drawing.Size(57, 20);
+            this.lblPrecioAIngresar.Size = new System.Drawing.Size(40, 13);
             this.lblPrecioAIngresar.TabIndex = 10;
             this.lblPrecioAIngresar.Text = "Precio:";
             // 
             // txbPrecioAIngresar
             // 
-            this.txbPrecioAIngresar.Location = new System.Drawing.Point(159, 239);
+            this.txbPrecioAIngresar.Location = new System.Drawing.Point(106, 155);
+            this.txbPrecioAIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbPrecioAIngresar.Name = "txbPrecioAIngresar";
-            this.txbPrecioAIngresar.Size = new System.Drawing.Size(290, 26);
+            this.txbPrecioAIngresar.Size = new System.Drawing.Size(195, 20);
             this.txbPrecioAIngresar.TabIndex = 13;
             // 
             // txbUrlImagen
             // 
-            this.txbUrlImagen.Location = new System.Drawing.Point(159, 284);
+            this.txbUrlImagen.Location = new System.Drawing.Point(106, 185);
+            this.txbUrlImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbUrlImagen.Name = "txbUrlImagen";
-            this.txbUrlImagen.Size = new System.Drawing.Size(290, 26);
+            this.txbUrlImagen.Size = new System.Drawing.Size(195, 20);
             this.txbUrlImagen.TabIndex = 14;
             // 
             // lblUrlImagenAIngresar
             // 
             this.lblUrlImagenAIngresar.AutoSize = true;
-            this.lblUrlImagenAIngresar.Location = new System.Drawing.Point(34, 287);
+            this.lblUrlImagenAIngresar.Location = new System.Drawing.Point(23, 187);
+            this.lblUrlImagenAIngresar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUrlImagenAIngresar.Name = "lblUrlImagenAIngresar";
-            this.lblUrlImagenAIngresar.Size = new System.Drawing.Size(91, 20);
+            this.lblUrlImagenAIngresar.Size = new System.Drawing.Size(61, 13);
             this.lblUrlImagenAIngresar.TabIndex = 15;
             this.lblUrlImagenAIngresar.Text = "Url Imagen:";
             // 
             // cbxMarca
             // 
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(159, 163);
+            this.cbxMarca.Location = new System.Drawing.Point(106, 106);
+            this.cbxMarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(290, 28);
+            this.cbxMarca.Size = new System.Drawing.Size(195, 21);
             this.cbxMarca.TabIndex = 16;
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(159, 198);
+            this.cbxCategoria.Location = new System.Drawing.Point(106, 129);
+            this.cbxCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(290, 28);
+            this.cbxCategoria.Size = new System.Drawing.Size(195, 21);
             this.cbxCategoria.TabIndex = 17;
             // 
             // frmAltaArticulo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.lblUrlImagenAIngresar);
@@ -201,6 +219,7 @@
             this.Controls.Add(this.lblDescripcionAIngresar);
             this.Controls.Add(this.lblNombreAIngresar);
             this.Controls.Add(this.lblCodigoAIgresar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta Articulo";
